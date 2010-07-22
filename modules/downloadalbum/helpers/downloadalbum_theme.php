@@ -17,13 +17,10 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street - Fifth Floor, Boston, MA  02110-1301, USA.
  */
-class html_uploader_event_Core {
-  static function site_menu($menu, $theme, $item_css_selector) {
-    $add_menu = $menu->get("add_menu");
-    $item = $theme->item();
-    if ($add_menu && $item) {
-      $add_menu->get("add_photos_item")
-        ->url(url::site("html_uploader/app/$item->id"));
+class downloadalbum_theme {
+  static function head($theme) {
+    if ($theme->item && access::can("view_full", $theme->item)) {
+      $theme->css("downloadalbum_menu.css");
     }
   }
 }
