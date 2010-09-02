@@ -133,8 +133,10 @@
       </div>
       <div id="g-footer" class="ui-helper-clearfix">
         <?= $theme->footer() ?>
-        <? if ($footer_text = module::get_var("gallery", "footer_text")): ?>
-        <?= $footer_text ?>
+       	<? if (!identity::active_user()->guest): ?>
+        	<? if ($footer_text = module::get_var("gallery", "footer_text")): ?>
+    	 	   <?= $footer_text ?>
+	        <? endif ?>
         <? endif ?>
 
         <? if (module::get_var("gallery", "show_credits")): ?>
