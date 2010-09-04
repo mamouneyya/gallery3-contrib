@@ -50,11 +50,20 @@ class minfo_theme_Core {
     if ($item->owner) {
       $results .= "<li>";
       if ($item->owner->url) {
-        $results .= t("By: <a href=\"%owner_url\">%owner_name</a>",
-                      array("owner_name" => $item->owner->display_name(),
-                            "owner_url" => $item->owner->url));
+        if ($item->is_album()) {
+          $results .= t("By <!--(album)-->: <a href=\"%owner_url\">%owner_name</a>",
+                        array("owner_name" => $item->owner->display_name(),
+                              "owner_url" => $item->owner->url));
+        } else {
+          $results .= t("By: <a href=\"%owner_url\">%owner_name</a>",
+                        array("owner_name" => $item->owner->display_name(),
+                              "owner_url" => $item->owner->url));        	
+        } 
       } else {
-        $results .= t("By: %owner_name", array("owner_name" => $item->owner->display_name()));
+      	  if ($item->is_album())
+          $results .= t("By <!--(album)-->: %owner_name", array("owner_name" => $item->owner->display_name()));
+          else
+          $results .= t("By: %owner_name", array("owner_name" => $item->owner->display_name()));
       }
       $results .= "</li>";
     }
