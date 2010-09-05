@@ -20,11 +20,27 @@
 class minfo_theme_Core {
   static function thumb_info($theme, $item) {
     $results = "";
+    
+    // items counter for albums
     if ($item->is_album()) {
     $children_count = $item->viewable()->children_count();
       if ($children_count) {
         $results .= "<li>";
         $results .= t("Items: %count", array("count" => $children_count));
+        $results .= "</li>";
+      }
+    }
+    
+    // views counter for items (photos/movies). with different translations for photo case & others case
+    if ($item->view_count && !$item->is_album()) {
+      if ($item->is_photo()) {
+        $results .= "<li>";
+        $results .= t("Views <!--photo-->: %view_count", array("view_count" => $item->view_count));
+        $results .= "</li>";
+      }
+      else {
+        $results .= "<li>";
+        $results .= t("Views: %view_count", array("view_count" => $item->view_count));
         $results .= "</li>";
       }
     }
@@ -45,12 +61,12 @@ class minfo_theme_Core {
         $results .= join(", ", $anchors) . "</li>";
       }
     }
-    // rWatcher End Edit
 
+    // owner for all. with different translations for movie,album case & photo case
     if ($item->owner) {
       $results .= "<li>";
       if ($item->owner->url) {
-        if ($item->is_album()) {
+        if ($item->is_album() || $item->is_movie()) {
           $results .= t("By <!--(album)-->: <a href=\"%owner_url\">%owner_name</a>",
                         array("owner_name" => $item->owner->display_name(),
                               "owner_url" => $item->owner->url));
@@ -60,7 +76,7 @@ class minfo_theme_Core {
                               "owner_url" => $item->owner->url));        	
         } 
       } else {
-      	  if ($item->is_album())
+      	  if ($item->is_album() || $item->is_movie())
           $results .= t("By <!--(album)-->: %owner_name", array("owner_name" => $item->owner->display_name()));
           else
           $results .= t("By: %owner_name", array("owner_name" => $item->owner->display_name()));
