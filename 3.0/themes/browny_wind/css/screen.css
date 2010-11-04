@@ -7,7 +7,7 @@
  *  1)  Font sizes, base HTML elements
  *  2)  Reusable content blocks
  *  3)  Page layout containers
- *  4)  Content blocks in specific layout containers  
+ *  4)  Content blocks in specific layout containers
  *  5)  States and interactions
  *  6)  Positioning and order
  *  7)  Navigation and menus
@@ -24,7 +24,19 @@
 /* ~browny~ */
 body, html {
   background-color: #5a3007;
-  font-family: 'Century gothic', Verdana, 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Geeza Pro', Tahoma, 'Century gothic', Verdana, 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.ui-widget {
+  font-family: 'Geeza Pro', Tahoma, 'Century gothic', Verdana, 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+  font-family: 'Geeza Pro', Tahoma, 'Century gothic', Verdana, 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#g-user-profile #g-comment-detail .g-author {
+  font-family: Cursive, Serif;
 }
 
 p {
@@ -647,10 +659,13 @@ li.g-error select {
 .g-denied,
 tr.g-error td.g-error,
 #g-add-photos-status .g-error {
+
+/* ~browny~ */
   background: #f6cbca url('../images/ico-error.png') no-repeat .4em 50%;
   color: #f00;
 }
 
+/* ~browny~ */
 .g-info {
   background: #e8e8e8 url('../images/ico-info.png') no-repeat .4em 50%;
 }
@@ -666,10 +681,12 @@ tr.g-success {
 	background-image: none;
 }
 
+/* ~browny~ */
 tr.g-success td.g-success {
 	background-image: url('../images/ico-success.png');
 }
 
+/* ~browny~ */
 .g-warning,
 tr.g-warning td.g-warning {
   background: #fcf9ce url('../images/ico-warning.png') no-repeat .4em 50%;
@@ -742,13 +759,16 @@ form .g-error {
 .g-last {
 }
 
+/* ~browny~ */
 .g-even {
-  background-color: #fff;
+  background-color: #EDE4D5 !important;
+  text-align: right;
 }
 
 /* ~browny~ */
 .g-odd {
-  background-color: #EDE4D5;
+  background-color: #BAAD8B !important;
+  text-align: left;
 }
 
 /** *******************************************************************
@@ -921,14 +941,6 @@ ul.sf-menu li li li.sfHover ul {
 }
 
 /* jQuery UI Dialog ~~~~~~~~~~~~~~~~~~~~~~ */
-
-.ui-widget {
-  font-family: 'Century gothic', Verdana, 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
-  font-family: 'Century gothic', Verdana, 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
 
 .ui-widget-overlay {
   background: #000;
@@ -1433,6 +1445,16 @@ div#g-action-status {
   padding-right: 0;
 }
 
+/* ~browny~ */
+.rtl .g-even {
+  text-align: left;
+}
+
+/* ~browny~ */
+.rtl .g-odd {
+  text-align: right;
+}
+
 /** *******************************************************************
  * 11) More Browny (Extra overrides for better Browny look)
  *********************************************************************/
@@ -1495,10 +1517,6 @@ div#g-action-status {
 #g-user-profile .g-block-content h2 {
   background-color: transparent;
   margin-bottom: inherit;
-}
-
-#g-user-profile #g-comment-detail .g-author {
-  font-family: Cursive, Serif;
 }
 
 #g-user-profile #g-comment-detail .g-author a {
@@ -1582,12 +1600,6 @@ div#g-action-status {
 #g-exif-data {
 	font-size: .85em !important;
 }
-.g-odd {
-	background: #BAAD8B !important;
-}
-.g-even {
-	background: #EDE4D5 !important;
-}
 
 /* 3rd Party Modules ~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -1618,5 +1630,27 @@ table.calendar td:hover {
 
 /* DownloadAlbum */
 #g-view-menu #g-download-album-link {
-  background-image: url('../images/ico-view-downloadalbum.png');
+  background-image: url('../images/ico-view-downloadalbum.png') !important;
+}
+
+/* comment_block */
+.g-odd .g-thumbnail, .g-even .g-thumbnail {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#g-recent-comments .g-even {
+  padding: 5px 15px 5px 44px;
+}
+
+#g-recent-comments .g-odd {
+  padding: 5px 44px 5px 15px;
+}
+
+.rtl #g-recent-comments .g-even {
+  padding: 5px 44px 5px 15px;
+}
+
+.rtl #g-recent-comments .g-odd {
+  padding: 5px 15px 5px 44px;
 }
