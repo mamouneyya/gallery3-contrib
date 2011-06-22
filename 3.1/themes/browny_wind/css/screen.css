@@ -1285,3 +1285,8 @@ table.calendar td:hover {
   margin-top: 3px;
   margin-bottom: 3px;
 }
+
+/* eAila */
+.image-annotate-canvas {
+  margin: 10px 0;
+}
