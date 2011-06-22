@@ -1620,21 +1620,22 @@ table.calendar td:hover {
 }
 
 #g-view-menu #g-calendarview-link {
-  background-image: url('../images/ico-view-calendarview.png') !important;
+  background-image: url('../images/ico-view-calendarview.png');
 }
 
 /* DownloadFullSize */
 #g-view-menu #g-download-fullsize-link {
-  background-image: url('../images/ico-view-downloadfullsize.png') !important;
+  background-image: url('../images/ico-view-downloadfullsize.png');
 }
 
 /* DownloadAlbum */
 #g-view-menu #g-download-album-link {
-  background-image: url('../images/ico-view-downloadalbum.png') !important;
+  background-image: url('../images/ico-view-downloadalbum.png');
 }
 
 /* comment_block */
-.g-odd .g-thumbnail, .g-even .g-thumbnail {
+.g-odd .g-thumbnail,
+.g-even .g-thumbnail {
   margin-top: 3px;
   margin-bottom: 3px;
 }
@@ -1646,6 +1647,7 @@ table.calendar td:hover {
 #g-recent-comments .g-odd {
   padding: 5px 44px 5px 15px;
 }
+
 
 .rtl #g-recent-comments .g-even {
   padding: 5px 44px 5px 15px;
