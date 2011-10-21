@@ -1290,3 +1290,26 @@ table.calendar td:hover {
 .image-annotate-canvas {
   margin: 10px 0;
 }
+
+#g-recent-comments li {
+  padding: 8px 6px;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: right;
+}
+
+#g-recent-comments li img.g-thumbnail {
+  box-shadow: 0 0 2px #555;
+  display: block;
+  margin: 0 auto;
+}
+
+#g-recent-comments li.g-even img {
+  border: 5px solid #dedede;
+  border-radius: 4px;
+}
+
+#g-recent-comments li.g-odd img {
+  border: 5px solid #fefefe;
+  border-radius: 4px;
+}
