@@ -2,3 +2,9 @@
 tmp
 *~
 *.swp
+
+# mamouneyya
+.gitignore
+3.0/themes/browny_wind.zip
+3.0/themes/browny_admin_wind.zip
+3.0/modules/comment_block
